@@ -1,0 +1,12 @@
+[submodule "appone"]
+	path = appone
+	url = git@github.com:sumansaurabh24/appone.git
+[submodule "apptwo"]
+	path = apptwo
+	url = git@github.com:sumansaurabh24/apptwo.git
+[submodule "gateway"]
+	path = gateway
+	url = git@github.com:sumansaurabh24/gateway.git
+[submodule "uaa"]
+	path = uaa
+	url = git@github.com:sumansaurabh24/uaa.git

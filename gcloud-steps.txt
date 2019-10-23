@@ -1,0 +1,4 @@
+gcloud projects create jhipster-demo-app
+gcloud config set project jhipster-demo-app
+gcloud container clusters create hipster-cluster  --cluster-version 1.13.10-gke.0  --num-nodes 4  --machine-type n1-standard-2 --zone us-central1-a
+gcloud container clusters get-credentials hipster-cluster --zone us-central1-a

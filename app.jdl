@@ -1,0 +1,61 @@
+/**
+* this is my application jdl file without entities
+* lets import this using jhipster
+*/
+application {
+  config {
+    baseName uaa, //create an uaa
+    applicationType uaa,
+    packageName com.jhipster.uaa,
+    serviceDiscoveryType eureka,
+    authenticationType uaa,
+    uaaBaseName "uaa",
+    prodDatabaseType mysql,
+    cacheProvider hazelcast,
+    buildTool maven
+  }
+}
+application {
+  config {
+    baseName gateway, //created gateway using uaa
+    applicationType gateway,
+    packageName com.jhipster.gateway,
+    serviceDiscoveryType eureka,
+    authenticationType uaa,
+    uaaBaseName "uaa",
+    prodDatabaseType mysql,
+    cacheProvider hazelcast,
+    buildTool maven,
+    clientFramework angularX,
+    useSass true,
+    testFrameworks [protractor]
+  }
+}
+application {
+  config {
+    baseName appone, //microservice 1 using uaa
+    applicationType microservice,
+    packageName com.jhipster.appone,
+    serviceDiscoveryType eureka,
+    authenticationType uaa,
+    uaaBaseName "uaa",
+    prodDatabaseType mysql,
+    buildTool maven,
+    serverPort 8081,
+    skipUserManagement true
+  }
+}
+application {
+  config {
+    baseName apptwo, //microservice 2 using uaa
+    applicationType microservice,
+    packageName com.jhipster.apptwo,
+    serviceDiscoveryType eureka,
+    authenticationType uaa,
+    uaaBaseName "uaa",
+    prodDatabaseType mysql,
+    buildTool maven,
+    serverPort 8082,
+    skipUserManagement true
+  }
+}

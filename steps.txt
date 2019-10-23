@@ -1,0 +1,45 @@
+Aim:
+-----
+We are going to demo 
+
+To deploy the jhipster application using kubernetes on local machine using kubectl and minikube.
+
+Pre-requisites
+--------------
+1. kubectl should be installed . I have installed docker dekstop , and enabled kubernetes from there itself. [Done]
+2. Application JDL file for creating gateway , uaa , microservices and import this using "jhipster import-jdl app.jdl" command. [Done]
+    By this time i have already imported jdl files
+
+3. After importing I have created two end points in two services that is /ping api in appone and apptwo both. [Done]
+4. Check for kubectl version, docker images and kubectl pods. On docker hub I do not have any images till now.
+
+
+Steps 
+----
+
+1. Create images for every appication like appone , aaptwo , gateway , uaa using command "./mvnw package -Pdev -DskipTests jib:dockerBuild" [done]
+2. After creating images verify it using "docker images" [Done]
+3. Run "jhipster kubernetes" to create a deployment file [Done]
+4. Run all below command after successful completion of point 4. [Done]
+    docker image tag appone sumansaurabh/appone
+    docker push sumansaurabh/appone
+    docker image tag apptwo sumansaurabh/apptwo
+    docker push sumansaurabh/apptwo
+    docker image tag gateway sumansaurabh/gateway
+    docker push sumansaurabh/gateway
+    docker image tag uaa sumansaurabh/uaa
+    docker push sumansaurabh/uaa
+
+5. Verify this on docker hub. Lets check it via browser or kitematic [Done]
+
+6. By this time jhipster has already generated the kubectl-apply.sh file. Run below generated command by Jhipster
+    bash kubectl-apply.sh 
+7. We should wait for all the pods to be up.
+8 . I will expose registry as service.
+9. lets invoke the api.
+
+
+-------------------------------------
+7. Run "minikube dashboard" 
+8. kubectl delete deployment --all
+kubectl delete statefulsets <statefulset-name>
