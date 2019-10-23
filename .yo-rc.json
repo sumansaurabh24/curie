@@ -1,0 +1,20 @@
+{
+  "generator-jhipster": {
+    "appsFolders": [
+      "appone",
+      "apptwo",
+      "gateway",
+      "uaa"
+    ],
+    "directoryPath": "./",
+    "serviceDiscoveryType": "eureka",
+    "jwtSecretKey": "Y2UxNzk4MmNhZjU4NjZjY2IyOGExNDI1YjI3ZjcyOGNlNDczNmJhZjdmZjE2MWQyMTQzZGMzYzdiMWYyYTEwZDM5NzM2ZTAyNzM2ZTExMjdmMzU2ZjcxODEwNmVkZDM0YjEwOQ==",
+    "dockerRepositoryName": "sumansaurabh",
+    "dockerPushCommand": "docker push",
+    "kubernetesNamespace": "default",
+    "kubernetesServiceType": "LoadBalancer",
+    "ingressDomain": "",
+    "monitoring": "no",
+    "istio": false
+  }
+}
